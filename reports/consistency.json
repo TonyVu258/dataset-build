@@ -1,0 +1,31 @@
+{
+  "criterion": "consistency",
+  "dataset": "images-test/Cay-sau-rieng",
+  "specification_status": "Frozen",
+  "official_result": {
+    "requirement_1": "PASS",
+    "requirement_2": "PASS"
+  },
+  "source": "images-test/src/tools/consistency_checker.py",
+  "note": "Status đã Frozen. official_result là kết quả của hai requirement.",
+  "requirement_1": {
+    "rule": "Tập chuỗi dataset_label ở Test và Validation khớp từng ký tự",
+    "strings_match": true,
+    "only_in_test": [],
+    "only_in_validation": [],
+    "shared_label_count": 10
+  },
+  "requirement_2": {
+    "rule": "Cặp dataset_label trên cùng content_hash chỉ mâu thuẫn khi map sang cặp bị cấm",
+    "hashes_with_two_or_more_labels": 0,
+    "pairs": {
+      "forbidden": 0,
+      "blocked_unmapped": 0,
+      "needs_evidence": 0
+    },
+    "examples": []
+  },
+  "out_of_scope": {
+    "filenames_with_different_bytes_and_labels": 97
+  }
+}

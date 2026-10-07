@@ -2,59 +2,103 @@
 
 Dataset: `images-test/Cay-sau-rieng`
 
-Trạng thái: **không đạt**
+Trạng thái phép đo: **không đạt**
 
-## Câu hỏi
+Specification: **Frozen**
 
-File có tuân thủ quy tắc kỹ thuật đã viết hay không?
+Requirement 1 đến 4 đã đóng. Kết quả do `validity_checker.py` ghi. Không sửa requirement sau kết quả này.
 
-## Kiểm tra
+## Why
 
-### Đuôi file khớp chữ ký byte
+Một giá trị có thể có mặt, và vẫn sai quy tắc định dạng đã viết. Validity trả lời giá trị đó có theo rule kỹ thuật hay không. Nó không trả lời giá trị có đúng với bệnh ngoài vườn hay không. Câu đó thuộc accuracy.
 
-Trạng thái: **không đạt**
+> File và mã nhãn có thuộc allow list, và có đúng dạng trong allow list, hay không?
 
-Quy tắc: đuôi file khớp với byte đầu của nội dung.
+## Requirement
 
-17 file khai `.png` nhưng là JPEG:
+| # | Requirement | Rule |
+|---|---|---|
+| 1 | Đuôi file khớp chữ ký | Đuôi file nằm trong allow list đuôi, và byte đầu khớp chữ ký của đuôi đó |
+| 2 | Mã nhãn đúng ký tự | `dataset_label` chỉ gồm chữ thường, chữ số và `_` |
+| 3 | Khung file có đủ phần kết | PNG kết thúc bằng `IEND`. JPEG kết thúc bằng `FF D9` |
+| 4 | Nhãn thuộc allow list | `dataset_label` là một chuỗi trong allow list nhãn |
+| 5 | Kích thước và số kênh | Không mở |
+| 6 | Tên file | Không mở |
 
-- `Validation/fruit_rot/2000.png`
-- `Validation/fruit_rot/2001.png`
-- `Validation/fruit_rot/2003.png`
-- `Validation/fruit_rot/2004.png`
-- `Validation/fruit_rot/2005.png`
-- `Validation/fruit_rot/2006.png`
-- `Validation/fruit_rot/2007.png`
-- `Validation/fruit_rot/2008.png`
-- `Validation/fruit_rot/2009.png`
-- `Validation/fruit_rot/2010.png`
-- `Validation/fruit_rot/2011.png`
-- `Validation/fruit_rot/2012.png`
-- `Validation/fruit_rot/2013.png`
-- `Validation/fruit_rot/2014.png`
-- `Validation/fruit_rot/2015.png`
-- `Validation/fruit_rot/2017.png`
-- `Validation/fruit_rot/2018.png`
+Giải mã từng điểm ảnh chưa phải requirement. Policy tên file tạm thời không mở.
 
-### Ảnh giải mã được
+Không mở requirement về kích thước và số kênh. Dataset chưa có model-input contract quy định các giá trị này. `width >= 224`, `height >= 224`, hay `channels = 3` chỉ trở thành requirement khi contract đó được viết và Frozen. Tên file chứa `224x224` không phải contract, và không được dùng để suy ra requirement.
 
-Trạng thái: **chưa chạy**
+Requirement 4 dùng allow list nhãn ở dưới. Danh sách đó là tên thư mục được phép lưu trong `dataset_label`. Mười một mã taxonomy trong `taxonomy-agreement.md` không phải allow list này. Catalog vẫn giữ tên thư mục. Map từ tên thư mục sang mã taxonomy là việc của taxonomy agreement.
 
-Quy tắc: mọi file ảnh giải mã được.
+## Allow list
 
-### Kích thước nằm trong khoảng cho phép
+### Đuôi file và chữ ký
 
-Trạng thái: **chưa kiểm được**
+| Đuôi | Chữ ký byte đầu |
+|---|---|
+| `.png` | `89 50 4E 47 0D 0A 1A 0A` |
+| `.jpg` | `FF D8` |
+| `.jpeg` | `FF D8` |
 
-Chưa đặt khoảng kích thước cho phép.
+Đuôi không có trong bảng thì không được phép. Đuôi có trong bảng nhưng byte đầu khác chữ ký của dòng đó thì không đạt requirement 1.
 
-### Nhãn thuộc danh sách cho phép
+### Ký tự của `dataset_label`
 
-Trạng thái: **chưa kiểm được**
+Được phép: `a-z`, `0-9`, `_`.
 
-Nhãn nằm trong danh sách cho phép là validity. Nhãn đúng bệnh là accuracy. Danh sách cho phép chưa được chốt riêng khỏi tên thư mục hiện có.
+Không được phép: dấu cách, chữ hoa, và ký tự khác.
 
-## Cần bổ sung
+### Giá trị `dataset_label`
 
-- [ ] Khoảng kích thước ảnh được phép.
-- [ ] Danh sách nhãn hợp lệ, nếu khác với mười tên thư mục hiện tại.
+| Được phép |
+|---|
+| `anthracnose_disease` |
+| `canker_disease` |
+| `fruit_rot` |
+| `mealybug_infestation` |
+| `pink_disease` |
+| `sooty_mold` |
+| `stem_blight` |
+| `thrips_disease` |
+| `yellow_leaf` |
+
+`stem_cracking_ gummosis` không có trong allow list. Chuỗi đó có dấu cách, nên cũng không đạt requirement 2.
+
+Các mã sau không thuộc allow list của `dataset_label`. Chúng là mã taxonomy, không phải tên thư mục đang lưu: `phytophthora_canker`, `phytophthora_fruit_rot`, `stem_blight_rhizoctonia`, `stem_gummosis_severe`, `thrips_damage`, `yellow_leaf_nutrient`, `yellow_leaf_root_rot`.
+
+## Quan sát đã có, chưa phải kết quả
+
+17 file trong `Validation/fruit_rot` khai `.png` nhưng là JPEG, từ `2000.png` đến `2018.png`, trừ `2002.png` và `2016.png`.
+
+Một nhãn không có trong allow list, trên 136 ảnh: `stem_cracking_ gummosis`. `Test` và `Validation` cùng chuỗi này. Hai phía khớp nhau, nên đây không phải lỗi consistency. Ảnh không vì dấu cách mà sai bệnh.
+
+1.297 file đều đủ phần kết, kể cả 17 file đuôi không khớp chữ ký. Đủ khung không có nghĩa đuôi file đúng.
+
+## Kết quả
+
+Nguồn: `validity_checker.py`. Chấm requirement 1 đến 4. Kích thước, số kênh và tên file không mở.
+
+| Kiểm tra | Số | Kết quả |
+|---|---:|---|
+| Record trong catalog | 1.297 | — |
+| File không còn trên đĩa | 0 | — |
+| Đuôi không khớp chữ ký | 17 | FAIL |
+| Không nhận ra chữ ký | 0 | PASS |
+| Khung thiếu phần kết | 0 | PASS |
+| `dataset_label` sai ký tự | 136 | FAIL |
+| `dataset_label` ngoài allow list | 136 | FAIL |
+
+| Requirement | Kết quả |
+|---|---|
+| 1. Đuôi file khớp chữ ký | FAIL |
+| 2. Mã nhãn đúng ký tự | FAIL |
+| 3. Khung file có đủ phần kết | PASS |
+| 4. Nhãn thuộc allow list | FAIL |
+| 5. Kích thước và số kênh | không mở |
+| 6. Tên file | không mở |
+
+Cả phép đo: FAIL.
+
+Có requirement không đạt. Các ví dụ nằm trong `validity.json`.
+Đủ phần kết không có nghĩa đuôi file đúng. Tên file và kích thước không được chấm.

@@ -1,0 +1,34 @@
+{
+  "criterion": "completeness",
+  "dataset": "images-test/Cay-sau-rieng",
+  "specification_status": "Frozen",
+  "measurement": "PASS",
+  "source": "images-test/src/tools/completeness_checker.py",
+  "counts": {
+    "image_files_in_scope": 1297,
+    "catalog_records": 1297,
+    "files_without_record": 0,
+    "records_without_file": 0,
+    "duplicate_image_keys": 0,
+    "required_fields_missing": 0,
+    "accuracy_null": 1297,
+    "accuracy_key_absent": 0,
+    "accuracy_other": 0,
+    "ds_store": 21,
+    "images_outside_scope": 0
+  },
+  "results": {
+    "required_record_fields": "PASS",
+    "required_dataset_cases": "PASS",
+    "quantity": "not_opened",
+    "missingness": "PASS",
+    "exclusions": "applied_not_scored",
+    "measurement": "PASS"
+  },
+  "examples": {
+    "files_without_record": [],
+    "records_without_file": [],
+    "duplicate_image_keys": [],
+    "required_field_problems": []
+  }
+}

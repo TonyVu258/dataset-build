@@ -1,0 +1,145 @@
+{
+  "criterion": "uniqueness",
+  "level": "byte",
+  "dataset": "images-test/Cay-sau-rieng",
+  "specification_status": "Frozen",
+  "measurement": "FAIL",
+  "source": "images-test/src/tools/uniqueness_checker.py",
+  "rule": "Trong một split, một content_hash chỉ xuất hiện một lần. Trùng giữa Test và Validation được phép.",
+  "counts": {
+    "catalog_records": 1297,
+    "hashes_in_both_splits_allowed": 158,
+    "hashes_repeated_inside_test": 15,
+    "hashes_repeated_inside_validation": 15,
+    "violations": 30
+  },
+  "not_scored": {
+    "scene": "Không mở. Chưa có policy scene identity.",
+    "tree": "Không xét được. Không có tree_id."
+  },
+  "examples": [
+    {
+      "split": "Test",
+      "content_hash": "09db84be68945ac422c7783b935c0fefb474a35416752a33268ef8d870bbe5a7",
+      "image_keys": [
+        "Cay-sau-rieng/Test/pink_disease/6141.jpg",
+        "Cay-sau-rieng/Test/pink_disease/7514.jpg"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "328e30f6d1ea030cd7486784626d366264c22d67ec460c44315d34ca03f1c625",
+      "image_keys": [
+        "Cay-sau-rieng/Test/fruit_rot/112_224x224.jpg",
+        "Cay-sau-rieng/Test/fruit_rot/212_224x224.jpg"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "3a13d99a1917832509b16b3a5cd2c2849e97c258c62bd91d67beb9c2e2419fad",
+      "image_keys": [
+        "Cay-sau-rieng/Test/pink_disease/3410.jpg",
+        "Cay-sau-rieng/Test/pink_disease/6103.jpg"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "3c7ccbcb81096233d568cb3e6bfcd4e92177259496f53192d69e45e8c2fb647e",
+      "image_keys": [
+        "Cay-sau-rieng/Test/pink_disease/12331.png",
+        "Cay-sau-rieng/Test/pink_disease/3143.png"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "541c5e1d09f0069bf3b1c53b801f522e723718ef33b6c114dae8aef08174970d",
+      "image_keys": [
+        "Cay-sau-rieng/Test/thrips_disease/82525.png",
+        "Cay-sau-rieng/Test/thrips_disease/90600.png"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "577a7e86a99f5c3a04ca9710230712b93e538fec546d8fd41dfca96445a9c26a",
+      "image_keys": [
+        "Cay-sau-rieng/Test/fruit_rot/1644.png",
+        "Cay-sau-rieng/Test/fruit_rot/6000.png"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "59492fc1d81347e2295884823cfc790aee4583ff95d31b013a7a450204bca104",
+      "image_keys": [
+        "Cay-sau-rieng/Test/fruit_rot/110_224x224.jpg",
+        "Cay-sau-rieng/Test/fruit_rot/210_224x224.jpg"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "64e2390cfc843ef17fef0cbb78dd39f50399125aba90df78e77869f2a6c5cd68",
+      "image_keys": [
+        "Cay-sau-rieng/Test/thrips_disease/165.png",
+        "Cay-sau-rieng/Test/thrips_disease/16541.png"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "979e3e3636fdd488ce124e805f9337f1e7b045a17c96697c806e9b1d7c408e41",
+      "image_keys": [
+        "Cay-sau-rieng/Test/thrips_disease/38452.png",
+        "Cay-sau-rieng/Test/thrips_disease/86573.png"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "b35989fa5d862e4b3bce6aa03bedd062cc710299c02c42da3b595b06244bc13e",
+      "image_keys": [
+        "Cay-sau-rieng/Test/thrips_disease/136.png",
+        "Cay-sau-rieng/Test/thrips_disease/1363.png",
+        "Cay-sau-rieng/Test/thrips_disease/363.png",
+        "Cay-sau-rieng/Test/thrips_disease/3632.png"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "be27907e17279df4ec91256bdb714804785d182f5224be9608961f7203fef46c",
+      "image_keys": [
+        "Cay-sau-rieng/Test/pink_disease/7203.png",
+        "Cay-sau-rieng/Test/pink_disease/7323.png"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "e50edf31053cdc0355e6e938f3f1a5f75d7be35e32ce4d5be4281af6992b7397",
+      "image_keys": [
+        "Cay-sau-rieng/Test/thrips_disease/102.png",
+        "Cay-sau-rieng/Test/thrips_disease/10294.png"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "e6abd2e53e406621755f5e1910808e1bd1bd36049bf3d2594cca223e53bb301d",
+      "image_keys": [
+        "Cay-sau-rieng/Test/fruit_rot/11_224x224.jpg",
+        "Cay-sau-rieng/Test/fruit_rot/211_224x224.jpg"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "e9e3956e52a1dff0bc8044615eb519c3edff5abb4ed4f5c39d54a705abba1e8e",
+      "image_keys": [
+        "Cay-sau-rieng/Test/fruit_rot/1638.png",
+        "Cay-sau-rieng/Test/fruit_rot/6036.png"
+      ]
+    },
+    {
+      "split": "Test",
+      "content_hash": "ed54435928a0654cad2536604f541feac51ecbc203ed2b00e514119da813bf3c",
+      "image_keys": [
+        "Cay-sau-rieng/Test/thrips_disease/1607.png",
+        "Cay-sau-rieng/Test/thrips_disease/607.png",
+        "Cay-sau-rieng/Test/thrips_disease/6072.png"
+      ]
+    }
+  ]
+}

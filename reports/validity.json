@@ -1,0 +1,163 @@
+{
+  "criterion": "validity",
+  "dataset": "images-test/Cay-sau-rieng",
+  "specification_status": "Frozen",
+  "measurement": "FAIL",
+  "source": "images-test/src/tools/validity_checker.py",
+  "counts": {
+    "catalog_records": 1297,
+    "missing_files": 0,
+    "extension_signature_mismatches": 17,
+    "unknown_signatures": 0,
+    "bad_endings": 0,
+    "label_charset_failures": 136,
+    "label_allowlist_failures": 136
+  },
+  "results": {
+    "extension_matches_signature": "FAIL",
+    "label_charset": "FAIL",
+    "container_ending": "PASS",
+    "label_allowlist": "FAIL"
+  },
+  "not_scored": {
+    "dimensions_and_channels": "Không mở. Chưa có model-input contract.",
+    "filename_policy": "Không mở.",
+    "pixel_decode": "Chưa phải requirement."
+  },
+  "examples": {
+    "extension_signature_mismatches": [
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2000.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2001.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2003.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2004.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2005.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2006.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2007.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2008.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2009.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2010.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2011.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2012.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2013.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2014.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2015.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2017.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Validation/fruit_rot/2018.png",
+        "suffix": ".png",
+        "detected": "jpeg"
+      }
+    ],
+    "unknown_signatures": [],
+    "bad_endings": [],
+    "label_charset_failures": [
+      {
+        "image_key": "Cay-sau-rieng/Test/stem_cracking_ gummosis/1100.png",
+        "dataset_label": "stem_cracking_ gummosis"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Test/stem_cracking_ gummosis/1101.png",
+        "dataset_label": "stem_cracking_ gummosis"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Test/stem_cracking_ gummosis/1102.png",
+        "dataset_label": "stem_cracking_ gummosis"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Test/stem_cracking_ gummosis/1103.png",
+        "dataset_label": "stem_cracking_ gummosis"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Test/stem_cracking_ gummosis/1104.png",
+        "dataset_label": "stem_cracking_ gummosis"
+      }
+    ],
+    "label_allowlist_failures": [
+      {
+        "image_key": "Cay-sau-rieng/Test/stem_cracking_ gummosis/1100.png",
+        "dataset_label": "stem_cracking_ gummosis"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Test/stem_cracking_ gummosis/1101.png",
+        "dataset_label": "stem_cracking_ gummosis"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Test/stem_cracking_ gummosis/1102.png",
+        "dataset_label": "stem_cracking_ gummosis"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Test/stem_cracking_ gummosis/1103.png",
+        "dataset_label": "stem_cracking_ gummosis"
+      },
+      {
+        "image_key": "Cay-sau-rieng/Test/stem_cracking_ gummosis/1104.png",
+        "dataset_label": "stem_cracking_ gummosis"
+      }
+    ],
+    "missing_files": []
+  }
+}
