@@ -11,7 +11,7 @@ import json
 import re
 
 LAB_ROOT = Path(__file__).resolve().parents[2]
-CATALOG_PATH = LAB_ROOT / "src" / "images.json"
+CATALOG_PATH = LAB_ROOT / "reports" / "json" / "images.json"
 REPORT_PATH = LAB_ROOT / "reports" / "consistency.md"
 JSON_PATH = LAB_ROOT / "reports" / "consistency.json"
 

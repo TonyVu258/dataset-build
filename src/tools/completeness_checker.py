@@ -14,7 +14,7 @@ REQUIRED_FIELDS = ("image_key", "dataset_label", "source_split", "content_hash")
 
 LAB_ROOT = Path(__file__).resolve().parents[2]
 DATA_ROOT = LAB_ROOT / "Cay-sau-rieng"
-CATALOG_PATH = LAB_ROOT / "src" / "images.json"
+CATALOG_PATH = LAB_ROOT / "reports" / "json" / "images.json"
 REPORT_PATH = LAB_ROOT / "reports" / "completeness.md"
 JSON_PATH = LAB_ROOT / "reports" / "completeness.json"
 

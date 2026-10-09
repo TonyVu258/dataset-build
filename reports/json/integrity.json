@@ -3,30 +3,25 @@
   "dataset": "images-test/Cay-sau-rieng",
   "specification_status": "Draft",
   "measurement": "BLOCKED",
-  "content_integrity": "PASS",
   "source": "images-test/src/tools/integrity_checker.py",
   "results": {
     "identity_reference": "not_scored",
-    "content_integrity": "PASS",
+    "content_integrity": "BLOCKED",
     "catalog_file": "BLOCKED",
     "provenance": "not_opened"
   },
   "reasons": {
     "identity_reference": "Requirement chưa Frozen.",
-    "content_integrity": "SHA-256 của file hiện tại so với baseline_content_hash và content_hash.",
+    "content_integrity": "Chưa có baseline fingerprint đã khóa.",
     "catalog_file": "Chưa chọn source of truth.",
     "provenance": "Requirement không mở."
   },
   "observation": {
     "catalog_records": 1297,
     "image_key_missing_file": 0,
-    "baseline_content_hash_null": 0,
-    "baseline_match": 1297,
-    "baseline_mismatch": 0,
     "note": "Số file còn trỏ được không phải kết quả PASS của requirement 1."
   },
   "examples": {
-    "image_key_missing_file": [],
-    "baseline_mismatch": []
+    "image_key_missing_file": []
   }
 }

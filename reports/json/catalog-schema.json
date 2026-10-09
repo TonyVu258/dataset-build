@@ -1,0 +1,41 @@
+{
+  "criterion": "catalog_schema",
+  "dataset": "images-test/Cay-sau-rieng",
+  "specification_status": {
+    "core_metadata": "Frozen",
+    "plant_part_schema": "Draft",
+    "capture_time_schema": "Draft",
+    "baseline": "verified",
+    "uuid_migration": "not_done",
+    "integrity_recompute": "see content-hash-verification.json"
+  },
+  "measurement": "PASS",
+  "source": "images-test/src/tools/catalog_schema_checker.py",
+  "path_root": "images-test/",
+  "counts": {
+    "records": 1297,
+    "duplicate_image_keys": 0,
+    "relative_path_matches_image_key": 1297,
+    "dataset_label_matches_directory": 1297,
+    "source_split_matches_directory": 1297,
+    "content_hash_hex": 1297,
+    "baseline_content_hash_null": 0,
+    "baseline_content_hash_locked": 1297,
+    "accuracy_null": 1297,
+    "plant_part_null": 1297,
+    "capture_time_null": 1297,
+    "uuid_image_keys": 0
+  },
+  "open_as_null": {
+    "baseline_content_hash": false,
+    "plant_part": true,
+    "capture_time": true
+  },
+  "examples": [],
+  "fields_added": {
+    "relative_path": 0,
+    "baseline_content_hash": 0,
+    "plant_part": 0,
+    "capture_time": 0
+  }
+}

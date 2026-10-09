@@ -1,0 +1,35 @@
+{
+  "kind": "test-fixture",
+  "not_catalog": true,
+  "purpose": "Ví dụ tạm cho schema chưa triển khai. Không phải ảnh của Cay-sau-rieng và không được đo cùng reports/json/images.json.",
+  "null_status": {
+    "statement": "null nghĩa là chưa có giá trị hoặc chưa triển khai. Đặt null không làm xong ý nghĩa của trường.",
+    "baseline_content_hash": "Chưa triển khai baseline chính thức trong catalog.",
+    "plant_part": "Chưa chốt bộ phận chính hay tập bộ phận. Chưa có giá trị.",
+    "capture_time": "Chưa chốt kiểu thời gian và nguồn. Chưa có giá trị."
+  },
+  "records": [
+    {
+      "image_key": "TEST/Test/example_label/a.png",
+      "relative_path": "TEST/Test/example_label/a.png",
+      "dataset_label": "example_label",
+      "source_split": "Test",
+      "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline_content_hash": null,
+      "accuracy": null,
+      "plant_part": null,
+      "capture_time": null
+    },
+    {
+      "image_key": "TEST/Validation/example_label/a.png",
+      "relative_path": "TEST/Validation/example_label/a.png",
+      "dataset_label": "example_label",
+      "source_split": "Validation",
+      "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "baseline_content_hash": null,
+      "accuracy": null,
+      "plant_part": null,
+      "capture_time": null
+    }
+  ]
+}

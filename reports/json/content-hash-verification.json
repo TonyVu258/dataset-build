@@ -1,0 +1,13 @@
+{
+  "dataset": "images-test/Cay-sau-rieng",
+  "verified_on": "2026-10-09",
+  "records": 1297,
+  "matched": 1297,
+  "mismatched": 0,
+  "missing": 0,
+  "rule": "baseline_content_hash equals content_hash only when the current file SHA-256 equals content_hash",
+  "examples": {
+    "mismatched": [],
+    "missing": []
+  }
+}

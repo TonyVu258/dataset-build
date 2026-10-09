@@ -49,7 +49,7 @@ image → SHA-256 → ABC123
 
 Kiểm lại vẫn ra `ABC123` thì nội dung không đổi. Ra `XYZ999` thì có bằng chứng nội dung đã đổi.
 
-Baseline phải là fingerprint đã khóa, không phải hash vừa tính lại rồi ghi đè cùng lúc với file. `content_hash` hiện trong catalog được tính từ file lúc lập catalog. Chưa có baseline đã khóa, nên requirement 2 là BLOCKED.
+Baseline phải là fingerprint đã khóa, không phải hash vừa tính lại rồi ghi đè cùng lúc với `content_hash`. `baseline_content_hash` được gán bằng `content_hash` chỉ khi SHA-256 của file hiện tại khớp fingerprint đã lưu. Lệch hash chứng minh byte khác baseline, chưa tự kết luận là thay đổi trái phép.
 
 ### 3. Catalog ↔ file
 
@@ -63,20 +63,23 @@ Phải chọn source of truth trước khi gọi một bên là sai. Nếu khôn
 
 ## Kết quả
 
-Nguồn: `integrity_checker.py`. Không tính lại SHA-256. Không gán PASS hay FAIL cho requirement chưa Frozen hoặc BLOCKED.
+Nguồn: `integrity_checker.py`. Requirement 2 tính lại SHA-256. Requirement chưa Frozen hoặc còn BLOCKED không được gán là kết quả của cả phép đo.
 
 | Requirement | Kết quả | Lý do |
 |---|---|---|
 | 1. Identity / reference | chưa chấm | Requirement chưa Frozen |
-| 2. Content integrity | BLOCKED | Chưa có baseline fingerprint đã khóa |
+| 2. Content integrity | PASS | SHA-256 file hiện tại so với `baseline_content_hash` |
 | 3. Catalog ↔ file | BLOCKED | Chưa chọn source of truth |
 | 4. Provenance | không mở | Chưa có lịch sử thay đổi |
 
 | Quan sát | Số |
 |---|---:|
 | Record trong catalog | 1.297 |
-| `image_key` không còn file | 0 |
+| File không còn theo `relative_path` | 0 |
+| `baseline_content_hash` là `null` | 0 |
+| File khớp baseline và `content_hash` | 1.297 |
+| File lệch baseline | 0 |
 
-Số file còn trỏ được không phải PASS của requirement 1.
+Số file còn trỏ được không phải PASS của requirement 1. Lệch hash chứng minh byte khác baseline, chưa kết luận thay đổi trái phép.
 
-Cả phép đo: BLOCKED.
+Cả phép đo: BLOCKED, vì requirement 1 và 3 chưa chấm.
